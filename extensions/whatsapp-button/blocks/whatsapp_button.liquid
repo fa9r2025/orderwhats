@@ -1,0 +1,32 @@
+<div style="margin: 20px 0;">
+  <a href="https://wa.me/{{ block.settings.phone_number }}?text={{ 'أريد الاستفسار عن: ' | url_encode }}{{ product.title | url_encode }}%0A{{ shop.url }}{{ product.url | url_encode }}" 
+     target="_blank"
+     style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: {{ block.settings.button_color }};
+        color: white;
+        padding: 12px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        gap: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+     ">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="24" height="24" style="filter: brightness(0) invert(1);">
+    {{ block.settings.button_text }}
+  </a>
+</div>
+
+{% schema %}
+{
+  "name": "WhatsApp Order",
+  "target": "section",
+  "settings": [
+    { "type": "text", "id": "phone_number", "label": "رقم الهاتف (216xxxxxxx)", "default": "216" },
+    { "type": "text", "id": "button_text", "label": "نص الزر", "default": "اطلب عبر واتساب" },
+    { "type": "color", "id": "button_color", "label": "لون الزر", "default": "#25D366" }
+  ]
+}
+{% endschema %}
