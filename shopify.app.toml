@@ -2,7 +2,7 @@
 
 client_id = "6681f51f5c6d864d2b37433012518282"
 name = "WhatsApp Easy Order"
-application_url = "https://example.com"
+application_url = "https://orderwhats-production.up.railway.app"
 embedded = true
 
 [build]
@@ -10,7 +10,7 @@ automatically_update_urls_on_dev = true
 include_config_on_deploy = true
 
 [webhooks]
-api_version = "2026-04"
+api_version = "2025-10"
 
   [[webhooks.subscriptions]]
   topics = [ "app/scopes_update" ]
@@ -22,7 +22,7 @@ api_version = "2026-04"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_products, write_orders, read_orders"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [ "https://orderwhats-production.up.railway.app/api/auth/callback" ]
