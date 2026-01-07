@@ -5,7 +5,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// تم تغيير الـ provider إلى postgresql ليتوافق مع Railway [cite: 7, 8]
+// تم التحديث لاستخدام PostgreSQL بدلاً من SQLite لتوافق بيئة Railway [cite: 7, 8]
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
